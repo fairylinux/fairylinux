@@ -141,11 +141,14 @@ To make your own build, copy config-something.json to a name of your
 choosing and run:
 
 ```
-make CONFIG=config-my-config-name.json
+make PENGUIN=config-my-config-name.json
 ```
 
 This will generate BOOTX64-my-config-name.EFI, which will be linked to
 BOOTX64.EFI for your convenience.
+
+If you forget to set your PENGUIN, the build system will mock you
+mercilessly :-).
 
 ## Contents of This Directory ##
 
