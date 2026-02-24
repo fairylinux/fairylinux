@@ -49,6 +49,17 @@ Enter FairyLinux:  The One-File Linux Distro
 3. Enjoy the ridiculousness of running a reasonably-complete Linux
    distribution from ONE file on disk.
 
+#### I Just Wanna Try It Out! ####
+
+Look under [Releases](https://github.com/fairylinux/fairylinux/releases) and
+grab any ONE of the .EFI files that looks good to you.  Then just pop it on
+a (e.g. USB) drive in \EFI\BOOT\BOOTX64.EFI and convince your BIOS to boot
+from that drive (which, TBH, is the hardest part of this exercise, since it
+varies from motherboard-to-motherboard).
+
+Demo video of me doing this on a typical "press F12 to choose a boot device"
+machine is [on Youtube](FIXME). FIXME: Update link
+
 ### Longer Explanation ###
 
 Modern EFI BIOSes (i.e. pretty much every PC made in like 10+ years) have a
@@ -93,6 +104,48 @@ So all you need to make a one-file Linux distribution is:
 3. Embed a CPIOball with an initramfs in it.
 
 ...and *poof* you have a single-file Linux distribution.
+
+OK, so it's a bit more complex than that when you're *also* putting this
+together with an already-existing distro such as Alpine, since there's a
+whole kernel package-building process.  And you have a bit of a chicken/egg
+problem, because:
+
+1. Ideally the initramfs should have drivers on it (in case, you know, you
+   want to plug in a USB device and actually have it work or something), and
+2. Until the kernel is compiled, you don't have any drivers yet, so to
+   embed a CPIOball into the kernel, you need to compile the kernel *twice*.
+
+The first pass just compiles the kernel as-is from the Alpine package repo;
+the second pass recompiles the kernel with the config tweaked to have the
+CPIOball embedded in it.
+
+See The FuTuRe below for some future-looking plans to make this process less
+painful if you want to "just add some packages" to an existing FairyLinux
+single-file file.
+
+## Building a Custom Distro ##
+
+Mostly you'll need podman, make, and some light archive utilities.
+
+Check out make/prereqs.mk for details on prereqs (particularly if you're
+not using a Debianish distro for bootstrapping).
+
+make/podman-pull.mk will by default pull the most-recent copy of the prebuilt
+kernel repo from upstream (which will save you a TON of compile time, so it's
+highly recommended!).
+
+make/build.sh then actually does the build and generates the BOOTX64.EFI that
+lands in the current directory.
+
+To make your own build, copy config-something.json to a name of your
+choosing and run:
+
+```
+make CONFIG=config-my-config-name.json
+```
+
+This will generate BOOTX64-my-config-name.EFI, which will be linked to
+BOOTX64.EFI for your convenience.
 
 ## Contents of This Directory ##
 
