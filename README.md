@@ -156,6 +156,7 @@ mercilessly :-).
    to download and build the Linux distro.
 2. config-\*.json - Config files that specify various flavors of FairyLinux
 3. Various helper scripts.
+4. [misc/](misc/) - Graphics and other assorted silliness.
 
 ## JSON Config Files ##
 
