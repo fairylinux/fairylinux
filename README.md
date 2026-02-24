@@ -6,6 +6,14 @@ The FairyLinux single-file Linux distribution
 
 ![The LittleBlue Fairy Penguin](misc/fairylinux.png)
 
+Fun facts about this little guy:
+
+1. The original inspiration for the Linux penguin was, in part, because Linus Torvalds
+   himself was [bitten by a fairy penguin while in Australia](https://en.wikipedia.org/wiki/Tux_(mascot).
+2. The more-modern name for these guys are "Little Blue Penguins."
+3. The even-more-modern name for these guys are just "Little Penguins."
+4. They don't actually have fairy-style wings and hang about in the clouds :-)
+
 ## Introduction ##
 
 I'm old enough to remember how to make a boot disk on 68k-era Macs:
