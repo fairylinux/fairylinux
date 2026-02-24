@@ -4,7 +4,7 @@ The FairyLinux single-file Linux distribution
 
 ## Obligatory Penguin ##
 
-[The LittleBlue Fairy Penguin](misc/fairylinux.png)
+![The LittleBlue Fairy Penguin](misc/fairylinux.png)
 
 ## Introduction ##
 
