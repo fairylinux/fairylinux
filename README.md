@@ -1,6 +1,6 @@
 # FairyLinux #
 
-The FairyLinux single-file Linux distribution
+The FairyLinux Single-File Linux distribution
 
 ## Obligatory Penguin ##
 
@@ -43,8 +43,9 @@ Enter FairyLinux:  The One-File Linux Distro
 
 ### Short version ###
 
+0. Have a non-ancient PC with an EFI BIOS. :-)
 1. Put the ONE FairyLinux file on any drive in /EFI/BOOT/BOOTX64.EFI.
-2. Reboot and convince your BIOS to boot from that drive.
+2. Reboot and convince your EFI BIOS to boot from that drive.
 3. Enjoy the ridiculousness of running a reasonably-complete Linux
    distribution from ONE file on disk.
 
